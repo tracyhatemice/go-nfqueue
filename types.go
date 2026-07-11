@@ -160,9 +160,13 @@ const (
 	NfDrop = iota
 	NfAccept
 	NfStolen
-	NfQeueue
+	NfQueue
 	NfRepeat
 )
+
+// NfQeueue is a deprecated incorrect spelling of NfQueue.
+// Deprecated: Please migrate to NfQueue.
+const NfQeueue = NfQueue
 
 // conntrack attributes
 // include/uapi/linux/netfilter/nfnetlink_conntrack.h

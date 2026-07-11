@@ -308,7 +308,7 @@ func (nfqueue *Nfqueue) setVerdict(id uint32, verdict int, batch bool, attribute
 		};
 	*/
 
-	if verdict != NfDrop && verdict != NfAccept && verdict != NfStolen && verdict != NfQeueue && verdict != NfRepeat {
+	if verdict != NfDrop && verdict != NfAccept && verdict != NfStolen && verdict != NfQueue && verdict != NfRepeat {
 		return ErrInvalidVerdict
 	}
 
