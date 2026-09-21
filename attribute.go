@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/florianl/go-nfqueue/v2/internal/unix"
+	"github.com/tracyhatemice/go-nfqueue/v2/internal/unix"
 
 	"github.com/mdlayher/netlink"
 )

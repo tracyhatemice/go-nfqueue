@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"time"
 
-	nfqueue "github.com/florianl/go-nfqueue/v2"
 	"github.com/mdlayher/netlink"
+	nfqueue "github.com/tracyhatemice/go-nfqueue/v2"
 )
 
 func ExampleNfqueue_RegisterWithErrorFunc() {

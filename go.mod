@@ -1,4 +1,4 @@
-module github.com/florianl/go-nfqueue/v2
+module github.com/tracyhatemice/go-nfqueue/v2
 
 require (
 	github.com/jsimonetti/rtnetlink/v2 v2.2.0
