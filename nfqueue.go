@@ -267,7 +267,10 @@ func Open(config *Config) (*Nfqueue, error) {
 		return nil, ErrInvFlag
 	}
 
-	con, err := netlink.Dial(unix.NETLINK_NETFILTER, &netlink.Config{NetNS: config.NetNS})
+	con, err := netlink.Dial(unix.NETLINK_NETFILTER, &netlink.Config{
+		NetNS:             config.NetNS,
+		MessageBufferSize: config.MessageBufferSize,
+	})
 	if err != nil {
 		return nil, err
 	}

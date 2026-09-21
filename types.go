@@ -74,6 +74,18 @@ type Config struct {
 
 	// Interface to log internals.
 	Logger Logger
+
+	// MessageBufferSize is the size in bytes of the reusable buffer used to
+	// receive each netlink message. If 0, no buffer is reused: every message
+	// costs an extra recvmsg(MSG_PEEK|MSG_TRUNC) to learn its size before the
+	// real read. Setting it removes that syscall, which is worth roughly a
+	// third of the per-message receive cost on a busy queue.
+	//
+	// It must be at least as large as the biggest message the kernel will
+	// send, which for NfQnlCopyPacket is MaxPacketLen plus the attribute
+	// overhead; a message that does not fit is reported as an error rather
+	// than silently truncated.
+	MessageBufferSize int
 }
 
 // Various errors
